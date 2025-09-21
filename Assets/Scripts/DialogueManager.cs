@@ -6,6 +6,7 @@ using UnityEditor.Rendering;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -151,7 +152,7 @@ public class DialogueManager : MonoBehaviour
 
         }
 
-    // go through the remaining choices the UI supports and make sure they're hidden
+        // go through the remaining choices the UI supports and make sure they're hidden
         for (int i = index; i < choices.Length; i++)
         {
 
@@ -159,8 +160,33 @@ public class DialogueManager : MonoBehaviour
 
         }
 
+        StartCoroutine(SelectFirstChoice());
 
     }
+
+    
+    private IEnumerator SelectFirstChoice()
+    {
+
+        // event system requires we clear it first
+        // then wait for at least one frame before we set the current selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        yield return new WaitForEndOfFrame();
+        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+
+    }
+
+    
+
+    // something weird about this function?
+    public void MakeChoice(int choiceIndex)
+    {
+
+        currentStory.ChooseChoiceIndex(choiceIndex);
+
+    }
+
+
 
 
 }

@@ -366,7 +366,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 190519573}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 632582236}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: MakeChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &190519573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,7 +881,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 188169550}
   dialogueText: {fileID: 1814184232}
   playerObject: {fileID: 1888043607}
-  choices: []
+  choices:
+  - {fileID: 1119000790}
+  - {fileID: 190519570}
 --- !u!4 &632582237
 Transform:
   m_ObjectHideFlags: 0
@@ -1247,7 +1261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 800e43795e11d614080ee5c8dc7db25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 1b331ae1186d63340a2488f75d870988, type: 3}
+  inkJSON: {fileID: 4900000, guid: 7ed8c50081ea0b548a4f65adcd0c9266, type: 3}
 --- !u!1 &1119000790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1344,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1119000793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 632582236}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: MakeChoice
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1119000793
 MonoBehaviour:
   m_ObjectHideFlags: 0
