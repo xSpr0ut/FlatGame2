@@ -34,6 +34,8 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
 
+       // DontDestroyOnLoad(gameObject);
+
         if (instance != null)
         {
 
@@ -105,7 +107,7 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator ExitDialogueMode()
     {
 
-        playerObject.transform.position = new Vector3(0, -4, 0);
+        playerObject.transform.position = new Vector3(0, -3.5f, 0);
         yield return new WaitForSeconds(0.2f);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -119,7 +121,7 @@ public class DialogueManager : MonoBehaviour
         if (currentStory.canContinue)
         {
             dialogueText.text = currentStory.Continue();
-            DisplayChoices();
+            // DisplayChoices();
         }
         else
         {
@@ -129,6 +131,9 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    /*
+
+    // botched code?
 
     private void DisplayChoices()
     {
@@ -164,7 +169,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    
+
     private IEnumerator SelectFirstChoice()
     {
 
@@ -176,7 +181,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    
+
 
     // something weird about this function?
     public void MakeChoice(int choiceIndex)
@@ -186,6 +191,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
+    */
 
 
 

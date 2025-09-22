@@ -118,10 +118,10 @@ TextureImporter:
       name: AdobeStock_549713748_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1516
         y: 0
-        width: 4688
-        height: 3200
+        width: 677
+        height: 828
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: AdobeStock_549713748_2
       rect:
         serializedVersion: 2
-        x: 209
+        x: 0
         y: 0
-        width: 2389
-        height: 2895
+        width: 4688
+        height: 3200
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

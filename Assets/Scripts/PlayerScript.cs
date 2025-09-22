@@ -1,3 +1,4 @@
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,18 +9,23 @@ public class PlayerScript : MonoBehaviour
     private Transform playerTransform;
     public float moveSpeed = 2.5f;
 
+
+    // all scripts
+    public TextAsset SampleSceneSideTriggerText;
+    public TextAsset StartText;
+
     // runs before start
     private void Awake()
     {
 
         playerTransform = GetComponent<Transform>();
-        DontDestroyOnLoad(gameObject);
-    
+       // DontDestroyOnLoad(gameObject);
+
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -50,27 +56,49 @@ public class PlayerScript : MonoBehaviour
             }
 
         }
-            // wrong code:
-            //  playerTransform.position = new Vector3(Mathf.Clamp(playerBody.position.x, -8, 8), Mathf.Clamp(playerBody.position.y, -4.5f, -2.5f), playerTransform.position.z);
+        // wrong code:
+        //  playerTransform.position = new Vector3(Mathf.Clamp(playerBody.position.x, -8, 8), Mathf.Clamp(playerBody.position.y, -4.5f, -2.5f), playerTransform.position.z);
 
-            // clamping position to prevent player going off screen:
+        // clamping position to prevent player going off screen:
 
-            Vector3 currentPosition = transform.position;
+        Vector3 currentPosition = transform.position;
 
-        if (SceneManager.GetActiveScene().name == "SampleScene") { 
+        if (SceneManager.GetActiveScene().name == "SampleScene")
+        {
 
             currentPosition.x = Mathf.Clamp(currentPosition.x, -8, 8);
             currentPosition.y = Mathf.Clamp(currentPosition.y, -4.5f, -2f);
             transform.position = currentPosition;
 
-        } else if (SceneManager.GetActiveScene().name == "InsideTheHouse") { 
+        }
+        else if (SceneManager.GetActiveScene().name == "InsideTheHouse")
+        {
 
-            currentPosition.x = Mathf.Clamp(currentPosition.x, -8, 2);
-            currentPosition.y = Mathf.Clamp(currentPosition.y, -4.5f, -1f);
+            currentPosition.x = Mathf.Clamp(currentPosition.x, -8, 0.5f);
+            currentPosition.y = Mathf.Clamp(currentPosition.y, -4.5f, 4f);
             transform.position = currentPosition;
 
         }
 
+/*
+        if (SceneManager.GetActiveScene().name == "InsideTheHouse")
+        {
+
+            if (currentPosition.x >= -0.1f && currentPosition.y <= -3.75f)
+            {
+
+                //  Debug.Log("HELP ME");
+                SceneManager.LoadScene("TheEnd");
+            }
+
+        }
+
+        */
+
 
     }
+    
+
+
+
 }
